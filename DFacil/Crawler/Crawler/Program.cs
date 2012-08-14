@@ -20,9 +20,10 @@ namespace Crawler
              * */
 
             // testando gera xml
-            string pathDosXML_lucio = @"D:\workspace\workspace-sevana\DiarioFacil\DiarioFacil.Comum\XML";
+            //string pathDosXML_lucio = @"D:\workspace\workspace-sevana\DiarioFacil\DiarioFacil.Comum\XML";
+            string pathDosXML_eric = @"C:\Projetos\net\DiarioFacil\DiarioFacil.Leitor\bin\Debug\XML";
             //string pathDosXML = @"C:\Users\Sevana\DiarioFacil\DiarioFacil.Comum\XML";
-            Util.ExtractFullRegex(pathDosXML_lucio);
+            Util.ExtractFullRegex(pathDosXML_eric);
         }
     }
 }
