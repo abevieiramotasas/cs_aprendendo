@@ -44,8 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cap2.cs" />
+    <Compile Include="Cap4.cs" />
+    <Compile Include="EventTeste.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="Lambda.cs" />
+    <Compile Include="MeuEnumerator.cs" />
+    <Compile Include="Operador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TryCatch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
