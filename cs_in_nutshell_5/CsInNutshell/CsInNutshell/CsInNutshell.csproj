@@ -54,6 +54,23 @@
     <Compile Include="Lambda.cs" />
     <Compile Include="MeuEnumerator.cs" />
     <Compile Include="Operador.cs" />
+    <Compile Include="ProducerConsumer\Buffer.cs" />
+    <Compile Include="ProducerConsumer\PrettyPrinterConsumer.cs" />
+    <Compile Include="ProducerConsumer\PrinterConsumer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProducerConsumer\IBuffer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProducerConsumer\IConsumer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProducerConsumer\IProducer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProducerConsumer\Producer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="String_\StringBuilderTeste.cs" />

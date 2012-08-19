@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CsInNutshell.ProducerConsumer;
 
 namespace CsInNutshell
 {
@@ -110,8 +111,21 @@ namespace CsInNutshell
             Operador o_i = (Operador) valor;
              */
             // extension
+            /*
             Console.WriteLine("testando extension method".GetPalavrao());
             Console.WriteLine("testando extension method".GetPalavrao().Beaultify());
+             */
+            // Observer
+            // dois consumers
+            IConsumer c_1 = new PrinterConsumer();
+            IConsumer c_2 = new PrettyPrinterConsumer();
+            CsInNutshell.ProducerConsumer.Buffer buffer = new CsInNutshell.ProducerConsumer.Buffer();
+            buffer.OnAddItem += c_1.Consume;
+            buffer.OnAddItem += c_2.Consume;
+            buffer.OnAddItem += c_1.Consume;
+            Producer p = new Producer();
+            p.OnAddItem += buffer.AddItem;
+            p.Produce("Testando");
         }
 
         class Logger
