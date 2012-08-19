@@ -56,6 +56,7 @@
     <Compile Include="Operador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="String_\StringBuilderTeste.cs" />
     <Compile Include="String_\StringTeste.cs" />
     <Compile Include="TryCatch.cs" />
   </ItemGroup>

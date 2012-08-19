@@ -106,5 +106,54 @@ namespace Nutshell.Stringt
             return a.Replace(f, t);
         }
 
+        [Test]
+        public void SplitJoinTest(
+            [Values("abelardo vieira mota", "juliana silva sauro", "bilolo caseiro")] string nome)
+        {
+            Assert.AreEqual(nome, String.Join(" ", nome.Split()));
+        }
+
+        [Test]
+        public void FormatTest(
+            [Values("O Abelardo é {0} e {1}")] string composite, 
+            [Values("Feio", "Engraçado", "Careca")] string v_1,
+            [Values("Feio", "Engraçado", "Careca")] string v_2)
+        {
+            string resultado_format = String.Format(composite, v_1, v_2);
+            string resultado_replace = composite.Replace("{0}", v_1);
+            resultado_replace = resultado_replace.Replace("{1}", v_2);
+            Assert.AreEqual(resultado_replace, resultado_format);
+        }
+
+        [Test]
+        public void FormatMinimunWidthTest(
+            [Values("abelardo", "juliana", "saulo")] string name)
+        {
+            // right align
+            string resultado = String.Format("{0, 20}", name);
+            Assert.AreEqual(20, resultado.Length);
+            // left align
+            resultado = String.Format("{0, -20}", name);
+            Assert.AreEqual(20, resultado.Length);
+        }
+
+        [Test]
+        public void EqualsCaseInvariantTest(
+            [Values("Abelardo", "Juliana")] string name)
+        {
+            Assert.IsTrue(name.ToLower().Equals(name, StringComparison.InvariantCultureIgnoreCase));
+            // compare case insensitive
+            Assert.AreEqual(0, String.Compare(name, name.ToUpper(), true));
+        }
+
+        // sabe que nem sei ao certo que diabos isso testa hehe
+        [Test]
+        public void CultureInfoCompareTest(
+            [Values("Muller")] string name,
+            [Values("Müller")] string name_)
+        {
+            System.Globalization.CultureInfo c = System.Globalization.CultureInfo.GetCultureInfo("de-DE");
+            Assert.AreNotEqual(0, String.Compare(name, name_, false, c));
+        }
     }
 }
