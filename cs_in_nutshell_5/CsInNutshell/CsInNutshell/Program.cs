@@ -3,12 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CsInNutshell.ProducerConsumer;
+using CsInNutshell.Threading;
+using System.Threading;
 
 namespace CsInNutshell
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            Printer p = new Printer("1 - Abelardo Vieira Mota");
+            Printer p2 = new Printer("2 - Juliana Vieira Mota");
+            Thread t1 = new Thread(p.Print);
+            Thread t2 = new Thread(p2.Print);
+            t1.Start();
+            t2.Start();
+        }
+
+        class Logger
+        {
+            public void Log(Cap4 c)
+            {
+                Console.WriteLine(String.Format("O valor é {0}", c.Valor));
+            }
+            public void LogFeio(Cap4 c)
+            {
+                Console.WriteLine("Logando");
+            }
+
+            public void Log(object sender, ArgumentosDoEvento e)
+            {
+                Console.WriteLine(String.Format("Msg chegou {0}", e.msg));
+            }
+        }
+
+        static void Main2()
         {
             // cap2
             /*
@@ -126,23 +155,6 @@ namespace CsInNutshell
             Producer p = new Producer();
             p.OnAddItem += buffer.AddItem;
             p.Produce("Testando");
-        }
-
-        class Logger
-        {
-            public void Log(Cap4 c)
-            {
-                Console.WriteLine(String.Format("O valor é {0}", c.Valor));
-            }
-            public void LogFeio(Cap4 c)
-            {
-                Console.WriteLine("Logando");
-            }
-
-            public void Log(object sender, ArgumentosDoEvento e)
-            {
-                Console.WriteLine(String.Format("Msg chegou {0}", e.msg));
-            }
         }
     }
 }
