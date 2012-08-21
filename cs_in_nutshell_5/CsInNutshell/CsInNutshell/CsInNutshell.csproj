@@ -49,13 +49,16 @@
     <Compile Include="Cap2.cs" />
     <Compile Include="Cap4.cs" />
     <Compile Include="Char_\CharTeste.cs" />
+    <Compile Include="DateTime\DateTimeTeste.cs" />
     <Compile Include="DateTime\TimeSpan.cs" />
+    <Compile Include="DateTime\TimeZoneTeste.cs" />
     <Compile Include="Encoding\EncodingTeste.cs" />
     <Compile Include="EventTeste.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Lambda.cs" />
     <Compile Include="MeuEnumerator.cs" />
     <Compile Include="Operador.cs" />
+    <Compile Include="Parsing\ParsingTeste.cs" />
     <Compile Include="ProducerConsumer\Buffer.cs" />
     <Compile Include="ProducerConsumer\PrettyPrinterConsumer.cs" />
     <Compile Include="ProducerConsumer\PrinterConsumer.cs">
@@ -82,6 +85,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
